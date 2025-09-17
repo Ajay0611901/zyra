@@ -17,7 +17,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { Github, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
@@ -49,7 +49,7 @@ export default function LoginPage() {
       level: 1,
       ecoScore: 0,
     });
-  }
+  };
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
