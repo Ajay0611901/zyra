@@ -9,7 +9,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
-import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc, serverTimestamp, getDoc } from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -82,9 +82,8 @@ export default function LoginPage() {
     try {
       const result = await signInWithPopup(auth, provider);
       // Check if the user is new to create a doc.
-      // This is a simplified check; for production, you might want a more robust way.
       const userDocRef = doc(db, "users", result.user.uid);
-      const userDoc = await userDocRef.get();
+      const userDoc = await getDoc(userDocRef);
       if (!userDoc.exists()) {
         await handleUserCreation(result.user);
       }
