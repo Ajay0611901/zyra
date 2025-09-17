@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "recycle-sorter-thumb",
+      "description": "Thumbnail for Recycle Sorter game",
+      "imageUrl": "https://picsum.photos/seed/recycle/600/400",
+      "imageHint": "recycling bins"
+    },
+    {
+      "id": "tree-planter-thumb",
+      "description": "Thumbnail for Tree Planting Clicker game",
+      "imageUrl": "https://picsum.photos/seed/tree/600/400",
+      "imageHint": "growing tree"
+    },
+    {
+      "id": "water-saver-thumb",
+      "description": "Thumbnail for Water Saver Challenge game",
+      "imageUrl": "https://picsum.photos/seed/water/600/400",
+      "imageHint": "water tap"
+    },
+    {
+      "id": "energy-puzzle-thumb",
+      "description": "Thumbnail for Energy Saver Puzzle game",
+      "imageUrl": "https://picsum.photos/seed/energy/600/400",
+      "imageHint": "glowing lightbulb"
+    },
+    {
+      "id": "carbon-quiz-thumb",
+      "description": "Thumbnail for Carbon Footprint Quiz game",
+      "imageUrl": "https://picsum.photos/seed/carbon/600/400",
+      "imageHint": "factory smoke"
+    },
+    {
+      "id": "algo-master-thumb",
+      "description": "Thumbnail for Algo Master game",
+      "imageUrl": "https://picsum.photos/seed/coding/600/400",
+      "imageHint": "code abstract"
+    }
+  ]
 }
