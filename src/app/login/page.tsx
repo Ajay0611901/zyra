@@ -108,6 +108,8 @@ export default function LoginPage() {
       router.push('/profile');
     } catch (error) {
       handleAuthError(error);
+    } finally {
+      setLoading(false);
     }
   };
   
