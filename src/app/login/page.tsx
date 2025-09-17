@@ -90,14 +90,12 @@ export default function LoginPage() {
   };
 
   const handleGoogleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
     try {
-      // Open popup immediately so browser won’t block it
+      const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
   
-      setLoading(true); // move this AFTER popup
+      setLoading(true);
   
-      // Check if the user is new
       const userDocRef = doc(db, "users", result.user.uid);
       const userDoc = await getDoc(userDocRef);
       if (!userDoc.exists()) {
