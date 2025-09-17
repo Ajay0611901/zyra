@@ -12,8 +12,8 @@ const Footer = () => {
           <h4 className="font-semibold text-foreground">Navigation</h4>
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="#games" className="text-muted-foreground hover:text-primary">Games</Link></li>
-            <li><Link href="#leaderboards" className="text-muted-foreground hover:text-primary">Leaderboards</Link></li>
-            <li><Link href="#community" className="text-muted-foreground hover:text-primary">Community</Link></li>
+            <li><Link href="/leaderboards" className="text-muted-foreground hover:text-primary">Leaderboards</Link></li>
+            <li><Link href="/community" className="text-muted-foreground hover:text-primary">Community</Link></li>
           </ul>
         </div>
         <div>

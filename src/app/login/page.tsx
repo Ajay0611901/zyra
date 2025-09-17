@@ -90,24 +90,27 @@ export default function LoginPage() {
   };
 
   const handleGoogleSignIn = async () => {
-    setLoading(true);
     const provider = new GoogleAuthProvider();
     try {
+      // Open popup immediately so browser won’t block it
       const result = await signInWithPopup(auth, provider);
-      const userDocRef = doc(db, 'users', result.user.uid);
+  
+      setLoading(true); // move this AFTER popup
+  
+      // Check if the user is new
+      const userDocRef = doc(db, "users", result.user.uid);
       const userDoc = await getDoc(userDocRef);
       if (!userDoc.exists()) {
         await handleUserCreation(result.user);
       }
-      toast({
-        title: 'Success',
-        description: 'Signed in with Google successfully!',
-      });
+  
+      toast({ title: 'Success', description: 'Signed in with Google successfully!' });
       router.push('/profile');
     } catch (error) {
       handleAuthError(error);
     }
   };
+  
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
