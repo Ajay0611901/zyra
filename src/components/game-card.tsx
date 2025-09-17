@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Badge } from './ui/badge';
 import { Zap } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
+import Link from 'next/link';
 
 interface GameCardProps {
   game: Game;
@@ -10,7 +11,7 @@ interface GameCardProps {
 
 const GameCard = ({ game }: GameCardProps) => {
   return (
-    <div className="group h-full rounded-lg [perspective:1000px]">
+    <Link href={`/games/${game.id}`} className="group h-full rounded-lg [perspective:1000px] block">
         <Card className="h-full cursor-pointer rounded-lg border-2 border-transparent bg-card transition-all duration-500 group-hover:[transform:rotateY(10deg)_rotateX(5deg)] group-hover:border-primary/50 group-hover:shadow-2xl group-hover:shadow-primary/20" style={{transformStyle: 'preserve-3d'}}>
             <CardContent className="flex h-full flex-col p-0">
                 <div className="relative h-40 w-full">
@@ -37,7 +38,7 @@ const GameCard = ({ game }: GameCardProps) => {
                 </div>
             </CardContent>
         </Card>
-    </div>
+    </Link>
   );
 };
 

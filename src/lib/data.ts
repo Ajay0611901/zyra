@@ -1,4 +1,4 @@
-import type { Game, Category } from '@/lib/types';
+import type { Game, Category, LeaderboardUser, CommunityPost } from '@/lib/types';
 import { Code, BrainCircuit, Puzzle, Gamepad2, BookOpen, Leaf } from 'lucide-react';
 
 export const games: Game[] = [
@@ -71,4 +71,47 @@ export const categories: Category[] = [
     { id: 'fun', name: 'Fun', icon: Gamepad2 },
     { id: 'subject', name: 'Subject-based', icon: BookOpen },
     { id: 'eco', name: 'Eco Games', icon: Leaf },
+];
+
+export const leaderboard: LeaderboardUser[] = [
+  { rank: 1, user: 'PixelPioneer', xp: 10500, avatar: 'https://i.pravatar.cc/150?u=PixelPioneer' },
+  { rank: 2, user: 'CodeCommander', xp: 9800, avatar: 'https://i.pravatar.cc/150?u=CodeCommander' },
+  { rank: 3, user: 'LogicLegend', xp: 9500, avatar: 'https://i.pravatar.cc/150?u=LogicLegend' },
+  { rank: 4, user: 'EcoWarrior', xp: 8900, avatar: 'https://i.pravatar.cc/150?u=EcoWarrior' },
+  { rank: 5, user: 'QuizMaster', xp: 8500, avatar: 'https://i.pravatar.cc/150?u=QuizMaster' },
+  { rank: 6, user: 'FunFanatic', xp: 8200, avatar: 'https://i.pravatar.cc/150?u=FunFanatic' },
+  { rank: 7, user: 'AstroNomad', xp: 7800, avatar: 'https://i.pravatar.cc/150?u=AstroNomad' },
+  { rank: 8, user: 'BioBard', xp: 7400, avatar: 'https://i.pravatar.cc/150?u=BioBard' },
+  { rank: 9, user: 'ChemChampion', xp: 7100, avatar: 'https://i.pravatar.cc/150?u=ChemChampion' },
+  { rank: 10, user: 'DataDynamo', xp: 6800, avatar: 'https://i.pravatar.cc/150?u=DataDynamo' },
+];
+
+export const communityPosts: CommunityPost[] = [
+  {
+    id: 'post1',
+    user: 'PixelPioneer',
+    avatar: 'https://i.pravatar.cc/150?u=PixelPioneer',
+    timestamp: '2 hours ago',
+    content: 'Just hit the top of the leaderboards in Recycle Sorter! Who wants to challenge my high score?',
+    likes: 58,
+    comments: 12,
+  },
+  {
+    id: 'post2',
+    user: 'EcoWarrior',
+    avatar: 'https://i.pravatar.cc/150?u=EcoWarrior',
+    timestamp: '5 hours ago',
+    content: 'The Tree Planting Clicker is so relaxing. It\'s a great way to de-stress and feel like you\'re making a small difference. 🌳',
+    likes: 123,
+    comments: 24,
+  },
+  {
+    id: 'post3',
+    user: 'CodeCommander',
+    avatar: 'https://i.pravatar.cc/150?u=CodeCommander',
+    timestamp: '1 day ago',
+    content: 'Stuck on level 5 of Algo Master. That recursion problem is a real head-scratcher. Any hints without giving away the solution?',
+    likes: 92,
+    comments: 35,
+  },
 ];

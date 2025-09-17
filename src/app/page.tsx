@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/carousel";
 import { Badge } from '@/components/ui/badge';
 import { Flame } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -49,10 +50,12 @@ export default function Home() {
               <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
                 Trending Games
               </h2>
-              <Badge variant="outline" className="border-primary/50 text-primary">
-                <Flame className="mr-2 h-4 w-4" />
-                Hot
-              </Badge>
+               <Link href="/games">
+                <Badge variant="outline" className="border-primary/50 text-primary">
+                  <Flame className="mr-2 h-4 w-4" />
+                  View All
+                </Badge>
+              </Link>
             </div>
             <Carousel opts={{ align: "start", loop: true }} className="w-full">
               <CarouselContent className="-ml-4">

@@ -9,9 +9,9 @@ const Header = () => {
           <p className="hidden text-sm text-foreground/80 sm:block">Learn, Play, Explore</p>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          <Link href="#games" className="text-foreground/80 transition-colors hover:text-primary">Games</Link>
-          <Link href="#leaderboards" className="text-foreground/80 transition-colors hover:text-primary">Leaderboards</Link>
-          <Link href="#community" className="text-foreground/80 transition-colors hover:text-primary">Community</Link>
+          <Link href="/games" className="text-foreground/80 transition-colors hover:text-primary">Games</Link>
+          <Link href="/leaderboards" className="text-foreground/80 transition-colors hover:text-primary">Leaderboards</Link>
+          <Link href="/community" className="text-foreground/80 transition-colors hover:text-primary">Community</Link>
         </nav>
         <div className="flex items-center gap-4">
           <Link href="#" className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary">Log In</Link>
