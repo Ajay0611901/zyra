@@ -19,9 +19,9 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
-      <main className="flex-grow pt-20">
+      <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative flex h-[70vh] min-h-[500px] items-center justify-center overflow-hidden text-center">
+        <section className="relative flex h-screen min-h-[600px] items-center justify-center overflow-hidden text-center -mt-20">
           <div className="absolute inset-0 z-0">
              <div className="absolute inset-0 bg-gradient-to-br from-background via-background/80 to-blue-900/40"></div>
              <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-primary/10 blur-3xl animate-pulse"></div>

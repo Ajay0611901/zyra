@@ -1,12 +1,36 @@
+'use client';
+
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
+import { User } from 'lucide-react';
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
+    <header className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300", 
+        isScrolled ? "bg-background/80 backdrop-blur-sm shadow-lg" : "bg-transparent"
+    )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-baseline gap-2">
-          <h1 className="text-3xl font-bold font-headline text-primary text-glow">ZYRA</h1>
-          <p className="hidden text-sm text-foreground/80 sm:block">Learn, Play, Explore</p>
+          <h1 className={cn(
+              "font-bold font-headline text-primary text-glow transition-all duration-300",
+              isScrolled ? "text-3xl" : "text-4xl"
+          )}>ZYRA</h1>
+          <p className={cn(
+              "hidden text-sm text-foreground/80 sm:block transition-opacity duration-300",
+              isScrolled ? "opacity-100" : "opacity-0"
+          )}>Learn, Play, Explore</p>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           <Link href="/games" className="text-foreground/80 transition-colors hover:text-primary">Games</Link>
@@ -14,8 +38,12 @@ const Header = () => {
           <Link href="/community" className="text-foreground/80 transition-colors hover:text-primary">Community</Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Link href="#" className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary">Log In</Link>
-          <Link href="#" className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">Sign Up</Link>
+            <Link href="/profile">
+              <div className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 flex items-center gap-2">
+                <User size={16} />
+                <span>Profile</span>
+              </div>
+            </Link>
         </div>
       </div>
     </header>
