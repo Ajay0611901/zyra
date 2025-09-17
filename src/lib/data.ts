@@ -9,8 +9,8 @@ export const games: Game[] = [
     category: 'Eco Games',
     difficulty: 'Easy',
     xp: 50,
-    thumbnailUrl: 'https://picsum.photos/seed/recycle/600/400',
-    thumbnailHint: 'recycling bins',
+    thumbnailUrl: 'https://picsum.photos/seed/glitch/600/400',
+    thumbnailHint: 'glitch art',
   },
   {
     id: 'tree-planter',
@@ -19,8 +19,8 @@ export const games: Game[] = [
     category: 'Eco Games',
     difficulty: 'Easy',
     xp: 25,
-    thumbnailUrl: 'https://picsum.photos/seed/tree/600/400',
-    thumbnailHint: 'growing tree',
+    thumbnailUrl: 'https://picsum.photos/seed/vaporwave/600/400',
+    thumbnailHint: 'vaporwave aesthetic',
   },
   {
     id: 'water-saver',
@@ -29,8 +29,8 @@ export const games: Game[] = [
     category: 'Eco Games',
     difficulty: 'Medium',
     xp: 75,
-    thumbnailUrl: 'https://picsum.photos/seed/water/600/400',
-    thumbnailHint: 'water tap',
+    thumbnailUrl: 'https://picsum.photos/seed/future/600/400',
+    thumbnailHint: 'futuristic city',
   },
   {
     id: 'energy-puzzle',
@@ -39,8 +39,8 @@ export const games: Game[] = [
     category: 'Logic',
     difficulty: 'Medium',
     xp: 100,
-    thumbnailUrl: 'https://picsum.photos/seed/energy/600/400',
-    thumbnailHint: 'glowing lightbulb',
+    thumbnailUrl: 'https://picsum.photos/seed/neon/600/400',
+    thumbnailHint: 'neon sign',
   },
   {
     id: 'carbon-quiz',
@@ -49,8 +49,8 @@ export const games: Game[] = [
     category: 'IQ',
     difficulty: 'Hard',
     xp: 150,
-    thumbnailUrl: 'https://picsum.photos/seed/carbon/600/400',
-    thumbnailHint: 'factory smoke',
+    thumbnailUrl: 'https://picsum.photos/seed/retro/600/400',
+    thumbnailHint: 'retro arcade',
   },
   {
     id: 'algo-master',
@@ -59,8 +59,8 @@ export const games: Game[] = [
     category: 'Coding',
     difficulty: 'Hard',
     xp: 200,
-    thumbnailUrl: 'https://picsum.photos/seed/coding/600/400',
-    thumbnailHint: 'code abstract',
+    thumbnailUrl: 'https://picsum.photos/seed/matrix/600/400',
+    thumbnailHint: 'code matrix',
   },
 ];
 

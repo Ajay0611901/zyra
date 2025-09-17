@@ -43,6 +43,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Badge } from './ui/badge';
+import React from 'react';
 
 const formSchema = z.object({
   playerSkillLevel: z.coerce.number().min(1, 'Skill level must be at least 1').max(10, 'Skill level must be at most 10'),
@@ -52,7 +53,7 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-export function ChallengeGenerator() {
+export function ChallengeGenerator({ trigger }: { trigger?: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [challenge, setChallenge] = useState<AdaptiveChallengeOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -94,13 +95,19 @@ export function ChallengeGenerator() {
     }
   };
 
+  const dialogTrigger = trigger ? (
+    React.cloneElement(trigger as React.ReactElement, { onClick: () => setIsOpen(true) })
+  ) : (
+    <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 transition-all hover:shadow-xl hover:shadow-accent/30">
+      <WandSparkles className="mr-2 h-5 w-5" />
+      Generate AI Challenge
+    </Button>
+  );
+
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 transition-all hover:shadow-xl hover:shadow-accent/30">
-          <WandSparkles className="mr-2 h-5 w-5" />
-          Generate AI Challenge
-        </Button>
+        {dialogTrigger}
       </DialogTrigger>
       <DialogContent className="sm:max-w-2xl">
         <DialogHeader>

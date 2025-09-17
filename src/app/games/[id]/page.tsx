@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Zap, Star } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { ChallengeGenerator } from '@/components/challenge-generator';
 
 export default function GameDetailsPage({ params }: { params: { id: string } }) {
   const game = games.find((g) => g.id === params.id);
@@ -78,9 +79,19 @@ export default function GameDetailsPage({ params }: { params: { id: string } }) 
                     </div>
                 </CardContent>
               </Card>
-              <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                Play Now
-              </Button>
+              {game.id === 'algo-master' ? (
+                <ChallengeGenerator
+                  trigger={
+                    <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                      Play Now
+                    </Button>
+                  }
+                />
+              ) : (
+                <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  Play Now
+                </Button>
+              )}
             </div>
           </div>
         </div>
