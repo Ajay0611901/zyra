@@ -1,3 +1,4 @@
+
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import GameCard from '@/components/game-card';
@@ -43,7 +44,7 @@ export default function Home() {
                   Start Learning
                 </button>
                } />
-               <Link href="/profile">
+               <Link href="/login">
                 <button className="px-8 py-3 bg-secondary text-secondary-foreground rounded-md font-semibold transition-all hover:bg-secondary/80 hover:shadow-lg hover:shadow-secondary/20 text-lg">
                   Login
                 </button>

@@ -1,12 +1,17 @@
+
 'use client';
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { User } from 'lucide-react';
+import { User, LogOut } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
+import { auth } from '@/lib/firebase';
+import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { user, loading } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +20,10 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleSignOut = async () => {
+    await auth.signOut();
+  }
 
   return (
     <header className={cn(
@@ -34,11 +43,28 @@ const Header = () => {
           <Link href="/community" className="text-foreground/80 transition-colors hover:text-primary">Community</Link>
         </nav>
         <div className="flex items-center gap-4">
-            <Link href="/profile">
-              <div className="rounded-full border-2 border-primary/50 p-2 text-primary transition-colors hover:bg-primary/10">
-                <User size={20} />
-              </div>
-            </Link>
+            {!loading && (
+              <>
+                {user ? (
+                  <>
+                    <Link href="/profile">
+                      <div className="rounded-full border-2 border-primary/50 p-2 text-primary transition-colors hover:bg-primary/10">
+                        <User size={20} />
+                      </div>
+                    </Link>
+                     <Button variant="ghost" size="icon" onClick={handleSignOut} className="text-muted-foreground hover:text-primary">
+                        <LogOut size={20} />
+                    </Button>
+                  </>
+                ) : (
+                  <Link href="/login">
+                     <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 hover:text-primary">
+                        Login
+                    </Button>
+                  </Link>
+                )}
+              </>
+            )}
         </div>
       </div>
     </header>
