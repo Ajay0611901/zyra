@@ -90,11 +90,10 @@ export default function LoginPage() {
   };
 
   const handleGoogleSignIn = async () => {
+    setLoading(true);
     try {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
-  
-      setLoading(true);
   
       const userDocRef = doc(db, "users", result.user.uid);
       const userDoc = await getDoc(userDocRef);
