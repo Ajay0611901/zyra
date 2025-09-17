@@ -83,7 +83,8 @@ export default function LoginPage() {
       const result = await signInWithPopup(auth, provider);
       // Check if the user is new to create a doc.
       // This is a simplified check; for production, you might want a more robust way.
-      const userDoc = await doc(db, "users", result.user.uid).get();
+      const userDocRef = doc(db, "users", result.user.uid);
+      const userDoc = await userDocRef.get();
       if (!userDoc.exists()) {
         await handleUserCreation(result.user);
       }
@@ -149,7 +150,7 @@ export default function LoginPage() {
                         <Button type="submit" className="w-full" disabled={loading}>
                             {loading ? <Loader2 className="animate-spin" /> : 'Create Account'}
                         </Button>
-                    </CardFooter>
+                    </Footer>
                 </form>
             </TabsContent>
             <div className="relative my-4">
