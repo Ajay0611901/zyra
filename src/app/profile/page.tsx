@@ -43,6 +43,20 @@ export default function ProfilePage() {
                 const userDoc = await getDoc(userDocRef);
                 if (userDoc.exists()) {
                     setUserProfile(userDoc.data() as UserProfile);
+                } else {
+                    // This can happen if the user was created with Google Sign In
+                    // but the doc creation failed or is still pending.
+                    // We can try to create it here as a fallback.
+                    const basicProfile: UserProfile = {
+                        uid: user.uid,
+                        email: user.email!,
+                        displayName: user.displayName || 'New User',
+                        photoURL: user.photoURL || undefined,
+                        xp: 0,
+                        level: 1,
+                        ecoScore: 0,
+                    };
+                    setUserProfile(basicProfile);
                 }
                  setProfileLoading(false);
             }

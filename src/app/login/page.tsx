@@ -81,7 +81,12 @@ export default function LoginPage() {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
-      await handleUserCreation(result.user);
+      // Check if the user is new to create a doc.
+      // This is a simplified check; for production, you might want a more robust way.
+      const userDoc = await doc(db, "users", result.user.uid).get();
+      if (!userDoc.exists()) {
+        await handleUserCreation(result.user);
+      }
       toast({ title: 'Success', description: 'Signed in with Google successfully!' });
       router.push('/profile');
     } catch (error) {
