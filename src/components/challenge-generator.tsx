@@ -34,8 +34,15 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { WandSparkles, Loader2 } from 'lucide-react';
+import { WandSparkles, Loader2, Lightbulb } from 'lucide-react';
 import { Separator } from './ui/separator';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { Badge } from './ui/badge';
 
 const formSchema = z.object({
   playerSkillLevel: z.coerce.number().min(1, 'Skill level must be at least 1').max(10, 'Skill level must be at most 10'),
@@ -175,11 +182,11 @@ export function ChallengeGenerator() {
         )}
 
         {challenge && (
-          <div className="mt-4 max-h-[60vh] overflow-y-auto pr-2">
+          <div className="mt-4 max-h-[70vh] overflow-y-auto pr-2">
             <h2 className="font-headline text-xl font-bold text-accent">{challenge.challengeTitle}</h2>
             <div className="mt-2 flex items-center gap-4 text-sm">
-                <span className="font-mono rounded-md bg-secondary px-2 py-1">{challenge.programmingLanguage}</span>
-                <span className="font-mono rounded-md bg-secondary px-2 py-1">Difficulty: {challenge.difficultyLevel}</span>
+                <Badge variant="secondary" className="font-mono">{challenge.programmingLanguage}</Badge>
+                <Badge variant="secondary" className="font-mono">Difficulty: {challenge.difficultyLevel}</Badge>
             </div>
             <Separator className="my-4" />
             <div className="prose prose-invert prose-sm max-w-none space-y-4 text-foreground/90">
@@ -191,6 +198,28 @@ export function ChallengeGenerator() {
                     </pre>
                 </div>
             </div>
+             <Accordion type="single" collapsible className="w-full mt-4">
+              <AccordionItem value="hints">
+                <AccordionTrigger>
+                  <span className="flex items-center gap-2"><Lightbulb className="w-4 h-4"/>Need a hint?</span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="list-disc pl-5 space-y-2 text-foreground/80">
+                    {challenge.hints.map((hint, index) => (
+                      <li key={index}>{hint}</li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="solution">
+                <AccordionTrigger>Show Solution</AccordionTrigger>
+                <AccordionContent>
+                  <pre className="mt-2 rounded-md bg-secondary p-4 text-sm text-secondary-foreground">
+                    <code>{challenge.solution}</code>
+                  </pre>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
              <DialogFooter className="mt-6">
                 <Button onClick={() => setChallenge(null)}>Generate Another</Button>
             </DialogFooter>

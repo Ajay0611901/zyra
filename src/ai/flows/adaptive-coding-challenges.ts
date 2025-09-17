@@ -31,6 +31,8 @@ const AdaptiveChallengeOutputSchema = z.object({
   difficultyLevel: z.string().describe('The difficulty level of the challenge (e.g., Easy, Medium, Hard).'),
   expectedOutput: z.string().describe('Example expected output of the coding challenge.'),
   programmingLanguage: z.string().describe('The programming language that the challenge is for.'),
+  solution: z.string().describe('A correct solution to the coding challenge in the specified language.'),
+  hints: z.array(z.string()).describe('A list of hints to help the user solve the challenge.'),
 });
 export type AdaptiveChallengeOutput = z.infer<typeof AdaptiveChallengeOutputSchema>;
 
@@ -52,7 +54,7 @@ const adaptiveCodingChallengePrompt = ai.definePrompt({
   Preferred Programming Language: {{{preferredProgrammingLanguage}}}
   Topic: {{topic}}
 
-  The challenge should be appropriate for the player's skill level and should be engaging and educational. Include a challenge title, a detailed description of the challenge, the difficulty level (Easy, Medium, Hard), and example expected output.
+  The challenge should be appropriate for the player's skill level and should be engaging and educational. Include a challenge title, a detailed description of the challenge, the difficulty level (Easy, Medium, Hard), example expected output, a correct solution, and a few hints.
 
   Make sure that the output is appropriate for the specified programming language.
 
