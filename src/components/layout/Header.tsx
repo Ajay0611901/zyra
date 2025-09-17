@@ -27,10 +27,6 @@ const Header = () => {
               "font-bold font-headline text-primary text-glow transition-all duration-300",
               isScrolled ? "text-3xl" : "text-4xl"
           )}>ZYRA</h1>
-          <p className={cn(
-              "hidden text-sm text-foreground/80 sm:block transition-opacity duration-300",
-              isScrolled ? "opacity-100" : "opacity-0"
-          )}>Learn, Play, Explore</p>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
           <Link href="/games" className="text-foreground/80 transition-colors hover:text-primary">Games</Link>
@@ -39,9 +35,8 @@ const Header = () => {
         </nav>
         <div className="flex items-center gap-4">
             <Link href="/profile">
-              <div className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 flex items-center gap-2">
-                <User size={16} />
-                <span>Profile</span>
+              <div className="rounded-full border-2 border-primary/50 p-2 text-primary transition-colors hover:bg-primary/10">
+                <User size={20} />
               </div>
             </Link>
         </div>
