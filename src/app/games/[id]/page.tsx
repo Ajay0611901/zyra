@@ -68,7 +68,7 @@ export default function GameDetailsPage({ params }: { params: { id: string } }) 
                     </div>
                     <div className="flex justify-between items-center">
                         <span className="text-muted-foreground">Rating:</span>
-                        <div className="flex items-center gap-1 text-amber-400">
+                        <div className="flex items-center gap-1 text-yellow-400">
                             <Star className="h-4 w-4 fill-current" />
                             <Star className="h-4 w-4 fill-current" />
                             <Star className="h-4 w-4 fill-current" />
@@ -79,7 +79,7 @@ export default function GameDetailsPage({ params }: { params: { id: string } }) 
                     </div>
                 </CardContent>
               </Card>
-              {game.id === 'algo-master' ? (
+              {game.id === 'carbon-quiz' ? (
                 <ChallengeGenerator
                   trigger={
                     <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">

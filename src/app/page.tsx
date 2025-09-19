@@ -36,12 +36,12 @@ export default function Home() {
               ZYRA
             </h1>
             <p className="mt-4 font-headline text-xl text-foreground/80 md:text-3xl">
-              Learn, Play, Explore
+              Become an Eco Guardian
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                <ChallengeGenerator trigger={
                 <button className="px-8 py-3 bg-primary text-primary-foreground rounded-md font-semibold transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 text-lg">
-                  Start Learning
+                  Start a Challenge
                 </button>
                } />
                <Link href="/login">
@@ -85,9 +85,9 @@ export default function Home() {
         <section id="categories" className="bg-secondary/30 py-16 md:py-24">
           <div className="container mx-auto px-4">
             <h2 className="mb-10 text-center font-headline text-4xl font-bold tracking-tight md:text-5xl">
-              Explore by Category
+              Explore by Topic
             </h2>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
               {categories.map((category) => (
                 <CategoryCard key={category.id} category={category} />
               ))}

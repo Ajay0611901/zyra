@@ -11,7 +11,7 @@ import Footer from '@/components/layout/Footer';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { Award, BarChart, ShieldCheck, Zap, Loader2 } from 'lucide-react';
+import { Award, BarChart, Leaf, Zap, Loader2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 interface UserProfile {
@@ -88,7 +88,7 @@ export default function ProfilePage() {
                                 <AvatarFallback>{userProfile.displayName.charAt(0)}</AvatarFallback>
                             </Avatar>
                             <CardTitle className="mt-4 font-headline text-4xl text-primary">{userProfile.displayName}</CardTitle>
-                            <p className="text-muted-foreground">Level {userProfile.level} Explorer</p>
+                            <p className="text-muted-foreground">Level {userProfile.level} Eco Guardian</p>
                         </CardHeader>
                         <CardContent className="mt-6 space-y-8">
                             {/* XP and Progress */}
@@ -118,14 +118,14 @@ export default function ProfilePage() {
                                     <p className="text-xs text-muted-foreground">Total XP</p>
                                 </div>
                                 <div className="rounded-lg bg-secondary p-4">
-                                    <BarChart className="mx-auto h-8 w-8 text-accent" />
+                                    <Leaf className="mx-auto h-8 w-8 text-accent" />
                                     <p className="mt-2 text-2xl font-bold">{userProfile.ecoScore}</p>
                                     <p className="text-xs text-muted-foreground">Eco Score</p>
                                 </div>
                                  <div className="rounded-lg bg-secondary p-4">
-                                    <ShieldCheck className="mx-auto h-8 w-8 text-blue-400" />
-                                    <p className="mt-2 text-2xl font-bold">12</p>
-                                    <p className="text-xs text-muted-foreground">Badges</p>
+                                    <BarChart className="mx-auto h-8 w-8 text-blue-400" />
+                                    <p className="mt-2 text-2xl font-bold">5</p>
+                                    <p className="text-xs text-muted-foreground">Games Played</p>
                                 </div>
                             </div>
 
@@ -133,10 +133,10 @@ export default function ProfilePage() {
                             <div>
                                 <h3 className="font-headline text-xl font-semibold">Badges</h3>
                                 <div className="mt-4 flex flex-wrap gap-4">
-                                    <Badge variant="default" className="p-2 text-sm"><Award className="mr-2"/>Top Recycler</Badge>
+                                    <Badge variant="default" className="p-2 text-sm"><Leaf className="mr-2"/>Recycling Ranger</Badge>
                                     <Badge variant="secondary" className="p-2 text-sm"><Zap className="mr-2"/>XP Master</Badge>
                                     <Badge variant="secondary" className="p-2 text-sm">Tree Hugger</Badge>
-                                    <Badge variant="secondary" className="p-2 text-sm">Community Helper</Badge>
+                                    <Badge variant="secondary" className="p-2 text-sm">Water Wise</Badge>
                                 </div>
                             </div>
                         </CardContent>

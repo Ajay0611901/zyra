@@ -5,8 +5,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/context/AuthContext';
 
 export const metadata: Metadata = {
-  title: 'Zyra: Learn, Play, Explore',
-  description: 'A futuristic educational gaming platform by Nueronex Coders.',
+  title: 'Zyra: Eco Guardian',
+  description: 'Learn about environmental conservation through fun and interactive games.',
 };
 
 export default function RootLayout({
