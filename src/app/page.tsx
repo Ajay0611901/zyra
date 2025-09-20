@@ -1,10 +1,8 @@
-
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import GameCard from '@/components/game-card';
 import CategoryCard from '@/components/category-card';
 import { games, categories } from '@/lib/data';
-import { ChallengeGenerator } from '@/components/challenge-generator';
 import {
   Carousel,
   CarouselContent,
@@ -15,6 +13,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Flame } from 'lucide-react';
 import Link from 'next/link';
+import { ChallengeLoader } from '@/components/challenge-loader';
 
 export default function Home() {
   return (
@@ -36,10 +35,10 @@ export default function Home() {
               ZYRA
             </h1>
             <p className="mt-4 font-headline text-xl text-foreground/80 md:text-3xl">
-              Become an Eco Guardian
+              Learn about environmental conservation through fun and interactive games.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-               <ChallengeGenerator trigger={
+               <ChallengeLoader trigger={
                 <button className="px-8 py-3 bg-primary text-primary-foreground rounded-md font-semibold transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 text-lg">
                   Start a Challenge
                 </button>

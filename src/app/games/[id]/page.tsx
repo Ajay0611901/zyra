@@ -7,7 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { Zap, Star } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChallengeGenerator } from '@/components/challenge-generator';
+import { ChallengeLoader } from '@/components/challenge-loader';
+import { CarbonQuiz } from '@/components/carbon-quiz';
 
 export default function GameDetailsPage({ params }: { params: { id: string } }) {
   const game = games.find((g) => g.id === params.id);
@@ -15,6 +16,25 @@ export default function GameDetailsPage({ params }: { params: { id: string } }) 
   if (!game) {
     notFound();
   }
+  
+  const isCarbonQuiz = game.id === 'carbon-quiz';
+
+  const PlayButton = () => {
+    if (isCarbonQuiz) {
+      return <CarbonQuiz />;
+    }
+    // All other games can use the ChallengeLoader for now
+    return (
+        <ChallengeLoader
+          trigger={
+            <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+              Play Now
+            </Button>
+          }
+        />
+    );
+  }
+
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
@@ -29,6 +49,7 @@ export default function GameDetailsPage({ params }: { params: { id: string } }) 
                     src={game.thumbnailUrl}
                     alt={game.title}
                     fill
+                    priority
                     className="object-cover"
                     data-ai-hint={game.thumbnailHint}
                   />
@@ -79,19 +100,7 @@ export default function GameDetailsPage({ params }: { params: { id: string } }) 
                     </div>
                 </CardContent>
               </Card>
-              {game.id === 'carbon-quiz' ? (
-                <ChallengeGenerator
-                  trigger={
-                    <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                      Play Now
-                    </Button>
-                  }
-                />
-              ) : (
-                <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                  Play Now
-                </Button>
-              )}
+              <PlayButton />
             </div>
           </div>
         </div>

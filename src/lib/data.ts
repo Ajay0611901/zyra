@@ -9,8 +9,8 @@ export const games: Game[] = [
     category: 'Eco Games',
     difficulty: 'Easy',
     xp: 50,
-    thumbnailUrl: 'https://picsum.photos/seed/planet/600/400',
-    thumbnailHint: 'recycling bins',
+    thumbnailUrl: 'https://picsum.photos/seed/recycling-game/600/400',
+    thumbnailHint: 'colorful recycling bins',
   },
   {
     id: 'tree-planter',
@@ -19,8 +19,8 @@ export const games: Game[] = [
     category: 'Eco Games',
     difficulty: 'Easy',
     xp: 25,
-    thumbnailUrl: 'https://picsum.photos/seed/forest/600/400',
-    thumbnailHint: 'green forest',
+    thumbnailUrl: 'https://picsum.photos/seed/digital-forest/600/400',
+    thumbnailHint: 'lush green sapling',
   },
   {
     id: 'water-saver',
@@ -29,8 +29,8 @@ export const games: Game[] = [
     category: 'Eco Games',
     difficulty: 'Medium',
     xp: 75,
-    thumbnailUrl: 'https://picsum.photos/seed/ocean/600/400',
-    thumbnailHint: 'water drop',
+    thumbnailUrl: 'https://picsum.photos/seed/water-challenge/600/400',
+    thumbnailHint: 'clear water droplet',
   },
   {
     id: 'energy-puzzle',
@@ -39,8 +39,8 @@ export const games: Game[] = [
     category: 'Eco Games',
     difficulty: 'Medium',
     xp: 100,
-    thumbnailUrl: 'https://picsum.photos/seed/lightning/600/400',
-    thumbnailHint: 'energy efficient',
+    thumbnailUrl: 'https://picsum.photos/seed/energy-game/600/400',
+    thumbnailHint: 'wind turbines sun',
   },
   {
     id: 'carbon-quiz',
@@ -49,8 +49,8 @@ export const games: Game[] = [
     category: 'IQ',
     difficulty: 'Hard',
     xp: 150,
-    thumbnailUrl: 'https://picsum.photos/seed/factory/600/400',
-    thumbnailHint: 'clean energy',
+    thumbnailUrl: 'https://picsum.photos/seed/carbon-quiz/600/400',
+    thumbnailHint: 'green earth illustration',
   },
 ];
 
